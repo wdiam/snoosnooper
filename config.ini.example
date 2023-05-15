@@ -1,0 +1,10 @@
+[Reddit]
+client_id = your_client_id
+client_secret = your_client_secret
+user_agent = snoosnooper (by /u/your_user_name)
+
+[Twilio]
+account_sid = your_account_sid
+auth_token = your_auth_token
+from_number = +1your_from_number
+to_number = +1your_to_number
