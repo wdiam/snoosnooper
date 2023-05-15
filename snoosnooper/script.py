@@ -2,16 +2,12 @@ import praw
 import configparser
 import os
 from pathlib import Path
-from .utils.utils import send_text, record_post_id, create_reddit_instance
-
-
-def get_script_dir():
-    return Path(os.path.dirname(os.path.abspath(__file__)))
+from .utils.utils import send_text, record_post_id, create_reddit_instance, get_root_dir
 
 
 def read_config():
     # read configuration file
-    config_path = get_script_dir().parent / "config.ini"
+    config_path = get_root_dir() / "config.ini"
 
     config = configparser.ConfigParser()
     config.read(config_path)
@@ -24,7 +20,7 @@ def kw_in_submission(submission, keyword):
 
 def check_new_posts(subreddits_str, keywords_str, config, verbose=False):
     # setting up data path and loading up data
-    seen_posts_data_path = get_script_dir().parent / "data/seen_posts.txt"
+    seen_posts_data_path = get_root_dir() / "data/seen_posts.txt"
 
     seen_posts_set = None
     if os.path.exists(seen_posts_data_path):
@@ -32,7 +28,8 @@ def check_new_posts(subreddits_str, keywords_str, config, verbose=False):
             seen_posts_set = set(f.read().split("\n"))
     else:
         seen_posts_set = set()
-
+    if verbose:
+        print("number of id's in seen set: %d" % len(seen_posts_set))
 
     # creating reddit instance
     reddit = create_reddit_instance(config)

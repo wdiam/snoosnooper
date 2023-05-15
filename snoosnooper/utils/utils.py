@@ -2,6 +2,7 @@ import os
 from twilio.rest import Client
 import tempfile
 import praw
+from pathlib import Path
 
 
 def send_text(config, text_message):
@@ -56,3 +57,7 @@ def subreddit_exists(reddit, subreddit_str):
     except Exception as e:
         exists = False
     return exists        
+
+
+def get_root_dir():
+    return Path(os.path.dirname(os.path.abspath(__file__))).parent.parent
