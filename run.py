@@ -7,9 +7,9 @@ from snoosnooper.utils.utils import subreddit_exists, create_reddit_instance
 
 def main():
     parser = argparse.ArgumentParser(description="Check a subreddit for new posts containing a keyword.")
-    parser.add_argument("--subreddits", nargs="+", required=True, help="The subreddits we're interested in")
-    parser.add_argument("--keywords", nargs="+", required=True, help="The keywords we'er interested in")
-    parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
+    parser.add_argument("-s", "--subreddits", nargs="+", required=True, help="The subreddits we're interested in")
+    parser.add_argument("-k", "--keywords", nargs="+", required=True, help="The keywords we'er interested in")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
 
     args = parser.parse_args()
 
