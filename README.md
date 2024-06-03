@@ -21,8 +21,7 @@ Replace subreddit1 and subreddit2 with the subreddits you want to monitor, and k
 
 ### Before You Start
 You'll need a few things:
-
-- **Reddit API Account**: Essential for accessing Reddit data. Sign up [here](https://www.reddit.com/api).
+- **Reddit API Account**: Essential for accessing Reddit data. Sign up [here](https://www.reddit.com/wiki/api).
 - **Twilio Account**: Needed for sending text notifications. Register [here](https://www.twilio.com).
 - **config.ini**: You'll see a file named `config.ini.example`. Fill in your details there, then rename it to `config.ini`. 
 
